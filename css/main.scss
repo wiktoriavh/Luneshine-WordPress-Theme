@@ -563,6 +563,22 @@ BLOGLIST
 		display: inline-block;
 		padding: 0 .5em;
 	}
+
+	.br-active-page {
+		pointer-events: none;
+		color: $light;
+		font-weight: 700;
+		font-size: 20px;
+		
+	}
+
+	@media (max-width: 1500px) {
+		width: 30vw;
+	}
+
+	@media (max-width: 1040px) {
+		width: 80%;
+	}
 }
 
 /*********
