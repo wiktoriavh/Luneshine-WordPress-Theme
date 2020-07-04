@@ -536,6 +536,25 @@ BLOGLIST
   padding: 0 .5em;
 }
 
+.br-pagination .br-active-page {
+  pointer-events: none;
+  color: #F5F5F5;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+@media (max-width: 1500px) {
+  .br-pagination {
+    width: 30vw;
+  }
+}
+
+@media (max-width: 1040px) {
+  .br-pagination {
+    width: 80%;
+  }
+}
+
 /*********
 MEDIA QUERIES
 ***********/
