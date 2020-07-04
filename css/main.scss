@@ -1,7 +1,7 @@
 $dark: #222831;
 $blueGrey: #627287;
 $lightBlue: #4fe8e3;
-$light: #f5f5f5;
+$light: #F5F5F5;
 
 * {
 	box-sizing: border-box;
@@ -63,7 +63,7 @@ h6 {
 
 p {
 	color: $light;
-	font: 400 20px "Heebo", sans-serif;
+	font: 400 17px "Heebo", sans-serif;
 }
 
 span {
@@ -156,6 +156,7 @@ ul {
 	color: $dark;
 	border: none;
 	border-radius: 15px;
+	cursor: pointer;
 }
 
 .br-btn-primary {
@@ -179,19 +180,23 @@ INDEX
 	}
 }
 
-.br-latest-update {
+.br-main-post {
 	width: 100%;
 
-	.br-latest-article {
+	.br-main-article {
 		position: relative;
 		margin-bottom: 125px;
 
-		.br-latest-img {
+		.br-main-img {
 			height: 580px;
 			border-radius: 50px;
+
+			@media (max-width: 1040px) {
+				height: 30vh;
+			}
 		}
 
-		.br-latest-card {
+		.br-main-card {
 			width: 1245px;
 			padding: 30px;
 			background: $dark;
@@ -199,21 +204,20 @@ INDEX
 			bottom: -100px;
 			border-radius: 0 50px 50px;
 			display: flex;
-			justify-content: space-between;
+			
 			flex-wrap: wrap;
 
-			.br-latest-title {
+			.br-main-title {
 				margin-bottom: 50px;
 				width: 100%;
 			}
 
-			.br-latest-info {
+			.br-main-info {
 				color: $lightBlue;
+				margin-right: 50px;
 			}
 
-			.br-latest-info:nth-of-type(even) {
-				margin: 0 110px;
-			}
+			
 		}
 	}
 
@@ -440,7 +444,7 @@ INDEX
 	column-gap: 30px;
 	grid-template-areas: "info info category quick legal social";
 	position: relative;
-	padding-bottom: 80px;
+	
 
 	ul a li {
 		@extend a;
@@ -528,17 +532,17 @@ BLOGPOST
 
 
 .br-post {
-	width: 1000px;
+	width: 800px;
 	margin: 0 auto 50px;
 
 	p {
 		text-align: justify;
-		line-height: 35px;
+		
 		padding-bottom: 30px;
 
 		
 	}
-	@media (max-width: 1500px) {
+	@media (max-width: 1040px) {
 			width: 100%;
 			padding: 0 30px;
 	}
@@ -610,9 +614,9 @@ MEDIA QUERIES
 			}
 		}
 	}
-	.br-latest-update {
-		.br-latest-article {
-			.br-latest-card {
+	.br-main-post {
+		.br-main-article {
+			.br-main-card {
 				width: 100%;
 			}
 		}
@@ -675,7 +679,8 @@ MEDIA QUERIES
 		position: fixed;
 		top: 0;
 		z-index: 5;
-		height: 80px;
+		height: 100px;
+		padding: 10px 0;
 		width: 100%;
 		background: $dark;
 	}
@@ -720,19 +725,19 @@ MEDIA QUERIES
 		}
 	}
 
-	.br-latest-update {
-		.br-latest-article {
-			.br-latest-card {
+	.br-main-post {
+		.br-main-article {
+			.br-main-card {
 				width: 100%;
 				display: flex;
 				justify-content: flex-start;
 
-				.br-latest-info:nth-of-type(even) {
+				.br-main-info:nth-of-type(even) {
 					margin: 0;
 					margin-right: 2em;
 				}
 
-				.br-latest-info {
+				.br-main-info {
 					margin-right: 2em;
 				}
 			}
@@ -768,6 +773,12 @@ MEDIA QUERIES
 	}
 
 	.br-category-group {
+		justify-content: center;
+
+		a.br-no-bg-link:nth-of-type(2) {
+			margin: 30px 0;
+		}
+
 		.br-category-article {
 			width: 100%;
 		}
@@ -790,23 +801,20 @@ MEDIA QUERIES
 
 	.br-footer {
 		height: auto;
-		margin-bottom: 60px;
 		position: relative;
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 1fr;
 		grid-template-rows: repeat(5, auto);
 		row-gap: 30px;
 		grid-template-areas:
-			"info"
-			"category"
-			"quick"
-			"legal"
-			"social";
+			"info info"
+			"category quick"
+			"legal social";
 
 		.br-footer-info {
 			position: static;
 
 			.br-braweria-copyright {
-				bottom: -40px;
+				bottom: 10px;
 			}
 		}
 	}
