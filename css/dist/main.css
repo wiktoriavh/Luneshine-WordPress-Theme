@@ -23,18 +23,18 @@ body {
 
 h1 {
   font: 400 40px/66px "Heebo", sans-serif;
-  color: #f5f5f5;
+  color: #F5F5F5;
   margin-bottom: 30px;
 }
 
 h2 {
   font: 500 30px/52px "Heebo", sans-serif;
-  color: #f5f5f5;
+  color: #F5F5F5;
 }
 
 h3, .br-category-group .br-category-category {
   font: 400 25px/37px "Heebo", sans-serif;
-  color: #f5f5f5;
+  color: #F5F5F5;
   text-transform: uppercase;
   padding-left: 30px;
   margin-bottom: 30px;
@@ -42,7 +42,7 @@ h3, .br-category-group .br-category-category {
 
 h4 {
   font: 700 20px/29px "Heebo", sans-serif;
-  color: #f5f5f5;
+  color: #F5F5F5;
 }
 
 h5 {
@@ -57,8 +57,8 @@ h6 {
 }
 
 p, span, a, .br-footer ul a li, ul {
-  color: #f5f5f5;
-  font: 400 20px "Heebo", sans-serif;
+  color: #F5F5F5;
+  font: 400 17px "Heebo", sans-serif;
 }
 
 a, .br-footer ul a li {
@@ -85,7 +85,7 @@ a.br-no-bg-link:hover, .br-footer ul a li.br-no-bg-link:hover {
 }
 
 ul {
-  color: #f5f5f5;
+  color: #F5F5F5;
 }
 
 .br-navbar {
@@ -144,6 +144,7 @@ ul {
   color: #222831;
   border: none;
   border-radius: 15px;
+  cursor: pointer;
 }
 
 .br-btn-primary {
@@ -166,21 +167,27 @@ INDEX
   height: 100%;
 }
 
-.br-latest-update {
+.br-main-post {
   width: 100%;
 }
 
-.br-latest-update .br-latest-article {
+.br-main-post .br-main-article {
   position: relative;
   margin-bottom: 125px;
 }
 
-.br-latest-update .br-latest-article .br-latest-img {
+.br-main-post .br-main-article .br-main-img {
   height: 580px;
   border-radius: 50px;
 }
 
-.br-latest-update .br-latest-article .br-latest-card {
+@media (max-width: 1040px) {
+  .br-main-post .br-main-article .br-main-img {
+    height: 30vh;
+  }
+}
+
+.br-main-post .br-main-article .br-main-card {
   width: 1245px;
   padding: 30px;
   background: #222831;
@@ -188,29 +195,25 @@ INDEX
   bottom: -100px;
   border-radius: 0 50px 50px;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.br-latest-update .br-latest-article .br-latest-card .br-latest-title {
+.br-main-post .br-main-article .br-main-card .br-main-title {
   margin-bottom: 50px;
   width: 100%;
 }
 
-.br-latest-update .br-latest-article .br-latest-card .br-latest-info {
+.br-main-post .br-main-article .br-main-card .br-main-info {
   color: #4fe8e3;
+  margin-right: 50px;
 }
 
-.br-latest-update .br-latest-article .br-latest-card .br-latest-info:nth-of-type(even) {
-  margin: 0 110px;
-}
-
-.br-latest-update .br-section-title {
+.br-main-post .br-section-title {
   width: 100%;
   display: block;
 }
 
-.br-latest-update .br-same-category {
+.br-main-post .br-same-category {
   display: flex;
   flex-wrap: wrap;
 }
@@ -410,7 +413,7 @@ INDEX
   display: inline-block;
   padding: 10px 15px;
   background: #222831;
-  color: #f5f5f5;
+  color: #F5F5F5;
   border-radius: 15px;
   margin: 10px;
 }
@@ -424,7 +427,6 @@ INDEX
   column-gap: 30px;
   grid-template-areas: "info info category quick legal social";
   position: relative;
-  padding-bottom: 80px;
 }
 
 .br-footer .br-footer-info {
@@ -481,7 +483,7 @@ INDEX
 }
 
 .br-footer .br-sm {
-  color: #f5f5f5;
+  color: #F5F5F5;
   font-size: 50px;
 }
 
@@ -502,17 +504,16 @@ INDEX
 BLOGPOST
 *********/
 .br-post {
-  width: 1000px;
+  width: 800px;
   margin: 0 auto 50px;
 }
 
 .br-post p, .br-post span, .br-post a, .br-post .br-footer ul a li, .br-footer ul a .br-post li, .br-post ul {
   text-align: justify;
-  line-height: 35px;
   padding-bottom: 30px;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1040px) {
   .br-post {
     width: 100%;
     padding: 0 30px;
@@ -576,7 +577,7 @@ MEDIA QUERIES
   #br-menu ul li:nth-last-of-type(1) {
     margin-right: 0;
   }
-  .br-latest-update .br-latest-article .br-latest-card {
+  .br-main-post .br-main-article .br-main-card {
     width: 100%;
   }
   .br-articles-section .br-articles article {
@@ -630,7 +631,8 @@ MEDIA QUERIES
     position: fixed;
     top: 0;
     z-index: 5;
-    height: 80px;
+    height: 100px;
+    padding: 10px 0;
     width: 100%;
     background: #222831;
   }
@@ -666,22 +668,22 @@ MEDIA QUERIES
     margin-right: 0;
     margin-bottom: 0;
   }
-  .br-latest-update .br-latest-article .br-latest-card {
+  .br-main-post .br-main-article .br-main-card {
     width: 100%;
     display: flex;
     justify-content: flex-start;
   }
-  .br-latest-update .br-latest-article .br-latest-card .br-latest-info:nth-of-type(even) {
+  .br-main-post .br-main-article .br-main-card .br-main-info:nth-of-type(even) {
     margin: 0;
     margin-right: 2em;
   }
-  .br-latest-update .br-latest-article .br-latest-card .br-latest-info {
+  .br-main-post .br-main-article .br-main-card .br-main-info {
     margin-right: 2em;
   }
-  .br-latest-update .br-category-group {
+  .br-main-post .br-category-group {
     justify-content: center;
   }
-  .br-latest-update .br-category-group a.br-no-bg-link:nth-of-type(2), .br-latest-update .br-category-group .br-footer ul a li.br-no-bg-link:nth-of-type(2), .br-footer ul a .br-latest-update .br-category-group li.br-no-bg-link:nth-of-type(2) {
+  .br-main-post .br-category-group a.br-no-bg-link:nth-of-type(2), .br-main-post .br-category-group .br-footer ul a li.br-no-bg-link:nth-of-type(2), .br-footer ul a .br-main-post .br-category-group li.br-no-bg-link:nth-of-type(2) {
     margin: 30px 0;
   }
   .br-articles-section .br-articles {
@@ -694,6 +696,12 @@ MEDIA QUERIES
     justify-content: center;
   }
   .br-content-cards .br-category-group a.br-no-bg-link:nth-of-type(2), .br-content-cards .br-category-group .br-footer ul a li.br-no-bg-link:nth-of-type(2), .br-footer ul a .br-content-cards .br-category-group li.br-no-bg-link:nth-of-type(2) {
+    margin: 30px 0;
+  }
+  .br-category-group {
+    justify-content: center;
+  }
+  .br-category-group a.br-no-bg-link:nth-of-type(2), .br-category-group .br-footer ul a li.br-no-bg-link:nth-of-type(2), .br-footer ul a .br-category-group li.br-no-bg-link:nth-of-type(2) {
     margin: 30px 0;
   }
   .br-category-group .br-category-article {
@@ -713,17 +721,16 @@ MEDIA QUERIES
   }
   .br-footer {
     height: auto;
-    margin-bottom: 60px;
     position: relative;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(5, auto);
     row-gap: 30px;
-    grid-template-areas: "info" "category" "quick" "legal" "social";
+    grid-template-areas: "info info" "category quick" "legal social";
   }
   .br-footer .br-footer-info {
     position: static;
   }
   .br-footer .br-footer-info .br-braweria-copyright {
-    bottom: -40px;
+    bottom: 10px;
   }
 }
